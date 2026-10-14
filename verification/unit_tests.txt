@@ -1,0 +1,41 @@
+test_deny_button_delivers_outcome (test_ui.StreamlitUITests.test_deny_button_delivers_outcome) ... 2026-10-14 00:25:15.109 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_refund_approve_and_resume_through_rendered_views (test_ui.StreamlitUITests.test_refund_approve_and_resume_through_rendered_views) ... 2026-10-14 00:25:16.046 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_service_errors_render_without_crashing_or_persisting_message (test_ui.StreamlitUITests.test_service_errors_render_without_crashing_or_persisting_message) ... 2026-10-14 00:25:16.216 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_actual_tools_and_unknown_order (test_workflows.DatabaseTests.test_actual_tools_and_unknown_order) ... ok
+test_reference_database_has_twelve_seeded_orders (test_workflows.DatabaseTests.test_reference_database_has_twelve_seeded_orders) ... ok
+test_json_object_is_parsed (test_workflows.ModelTests.test_json_object_is_parsed) ... ok
+test_malformed_or_nonobject_json_rejected (test_workflows.ModelTests.test_malformed_or_nonobject_json_rejected) ... ok
+test_model_limit_blocks_provider_call (test_workflows.ModelTests.test_model_limit_blocks_provider_call) ... ok
+test_provider_exception_is_redacted (test_workflows.ModelTests.test_provider_exception_is_redacted) ... ok
+test_admitted_request_hashes_identity_and_sets_window (test_workflows.RateLimitTests.test_admitted_request_hashes_identity_and_sets_window) ... ok
+test_denied_request_carries_retry_after (test_workflows.RateLimitTests.test_denied_request_carries_retry_after) ... ok
+test_disabled_limiter_never_contacts_redis (test_workflows.RateLimitTests.test_disabled_limiter_never_contacts_redis) ... ok
+test_global_model_limit_uses_shared_identity (test_workflows.RateLimitTests.test_global_model_limit_uses_shared_identity) ... ok
+test_invalid_redis_response_fails_closed (test_workflows.RateLimitTests.test_invalid_redis_response_fails_closed) ... ok
+test_redis_http_failure_does_not_expose_secrets (test_workflows.RateLimitTests.test_redis_http_failure_does_not_expose_secrets) ... ok
+test_redis_json_error_and_timeout_fail_closed (test_workflows.RateLimitTests.test_redis_json_error_and_timeout_fail_closed) ... ok
+test_billing_routes_and_reads_actual_db (test_workflows.WorkflowTests.test_billing_routes_and_reads_actual_db) ... ok
+test_clarification_stops_before_compaction (test_workflows.WorkflowTests.test_clarification_stops_before_compaction) ... ok
+test_concurrent_approval_decisions_append_once (test_workflows.WorkflowTests.test_concurrent_approval_decisions_append_once) ... ok
+test_denial_delivers_outcome (test_workflows.WorkflowTests.test_denial_delivers_outcome) ... ok
+test_duplicate_pending_request_is_not_created (test_workflows.WorkflowTests.test_duplicate_pending_request_is_not_created) ... ok
+test_empty_and_oversized_input_rejected (test_workflows.WorkflowTests.test_empty_and_oversized_input_rejected) ... ok
+test_failed_admission_does_not_create_session_or_call_model (test_workflows.WorkflowTests.test_failed_admission_does_not_create_session_or_call_model) ... ok
+test_failed_compaction_does_not_mutate_session (test_workflows.WorkflowTests.test_failed_compaction_does_not_mutate_session) ... ok
+test_general_support_routes (test_workflows.WorkflowTests.test_general_support_routes) ... ok
+test_incomplete_compaction_cannot_reach_tools (test_workflows.WorkflowTests.test_incomplete_compaction_cannot_reach_tools) ... ok
+test_ineligible_and_unknown_orders_never_queue (test_workflows.WorkflowTests.test_ineligible_and_unknown_orders_never_queue) ... ok
+test_invalid_refund_amounts_and_missing_details_are_rejected (test_workflows.WorkflowTests.test_invalid_refund_amounts_and_missing_details_are_rejected) ... ok
+test_model_boolean_string_is_rejected (test_workflows.WorkflowTests.test_model_boolean_string_is_rejected) ... ok
+test_refund_is_pending_then_approved_and_resumable (test_workflows.WorkflowTests.test_refund_is_pending_then_approved_and_resumable) ... ok
+test_repeated_and_invalid_decisions_are_rejected (test_workflows.WorkflowTests.test_repeated_and_invalid_decisions_are_rejected) ... ok
+test_sessions_are_isolated_and_read_copies_cannot_mutate_storage (test_workflows.WorkflowTests.test_sessions_are_isolated_and_read_copies_cannot_mutate_storage) ... ok
+test_unknown_billing_order (test_workflows.WorkflowTests.test_unknown_billing_order) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 1.305s
+
+OK

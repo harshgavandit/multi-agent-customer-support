@@ -1,0 +1,119 @@
+{
+  "verified_at_utc": "2026-10-13T18:56:02.003213+00:00",
+  "model": "gpt-4o-mini",
+  "checks": [
+    {
+      "check": "redis_ping",
+      "status": "PASS",
+      "details": {
+        "result": "PONG"
+      },
+      "duration_seconds": 0.083
+    },
+    {
+      "check": "redis_limit_and_expiry",
+      "status": "PASS",
+      "details": {
+        "limit": 2,
+        "window_seconds": 2,
+        "third_request": "blocked",
+        "after_expiry": "allowed"
+      },
+      "duration_seconds": 2.262
+    },
+    {
+      "check": "redis_concurrent_admission",
+      "status": "PASS",
+      "details": {
+        "concurrent_requests": 8,
+        "allowed": 3,
+        "blocked": 5
+      },
+      "duration_seconds": 0.051
+    },
+    {
+      "check": "application_rate_limit_admission",
+      "status": "PASS",
+      "details": {
+        "graph_entry": "blocked",
+        "session_created": false,
+        "model_called": false
+      },
+      "duration_seconds": 0.047
+    },
+    {
+      "check": "global_model_rate_limit_admission",
+      "status": "PASS",
+      "details": {
+        "shared_model_budget": "blocked",
+        "provider_called": false
+      },
+      "duration_seconds": 0.086
+    },
+    {
+      "check": "real_model_json_completion",
+      "status": "PASS",
+      "details": {
+        "model": "gpt-4o-mini",
+        "json_object": "valid"
+      },
+      "duration_seconds": 2.765
+    },
+    {
+      "check": "multi_turn_billing_resume_isolation",
+      "status": "PASS",
+      "details": {
+        "clarification": "passed",
+        "team": "payments_team",
+        "amount": 5600,
+        "payment": "pending",
+        "resume_and_isolation": "passed"
+      },
+      "duration_seconds": 4.25
+    },
+    {
+      "check": "refund_approval_and_duplicate_protection",
+      "status": "PASS",
+      "details": {
+        "decision": "approved",
+        "pending_record": "created",
+        "outcome_in_resumed_chat": true,
+        "repeated_decision": "blocked"
+      },
+      "duration_seconds": 5.098
+    },
+    {
+      "check": "refund_denial",
+      "status": "PASS",
+      "details": {
+        "decision": "denied",
+        "pending_record": "created",
+        "outcome_in_resumed_chat": true,
+        "repeated_decision": "blocked"
+      },
+      "duration_seconds": 2.153
+    },
+    {
+      "check": "ineligible_refund",
+      "status": "PASS",
+      "details": {
+        "order": "ORD-1005",
+        "eligibility": "rejected",
+        "approval_created": false
+      },
+      "duration_seconds": 2.213
+    },
+    {
+      "check": "general_support",
+      "status": "PASS",
+      "details": {
+        "team": "unassigned",
+        "reply": "present"
+      },
+      "duration_seconds": 2.632
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "scope": "Real Upstash and real model; simulated SQLite reference orders and in-memory approvals; no actual payment processing."
+}
