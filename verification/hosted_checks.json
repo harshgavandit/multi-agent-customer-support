@@ -1,0 +1,99 @@
+{
+  "verified_at_utc": "2026-10-20T11:37:46.878271+00:00",
+  "url": "https://harsh-multi-agent-customer-support.streamlit.app/",
+  "hosting": "Streamlit Community Cloud",
+  "repository": "harshgavandit/multi-agent-customer-support",
+  "branch": "main",
+  "application_source_commit": "1e03c1f3475368ee2ce1be0b0cf21c9c3c6274ef",
+  "model": "gpt-4o-mini",
+  "checks": [
+    {
+      "check": "hosted_startup",
+      "status": "PASS",
+      "evidence": "Streamlit Community Cloud built and started the app; Python 3.14.8 / Streamlit 1.66.0."
+    },
+    {
+      "check": "public_access",
+      "status": "PASS",
+      "evidence": "Anonymous requests.Session received HTTP 200 at the live URL with routing cookies only; no account credentials supplied."
+    },
+    {
+      "check": "server_health",
+      "status": "PASS",
+      "evidence": "GET /~/+/_stcore/health returned HTTP 200, text/plain body ok."
+    },
+    {
+      "check": "clarification",
+      "status": "PASS",
+      "evidence": "Vague order message produced a question asking for the issue and order ID."
+    },
+    {
+      "check": "billing",
+      "status": "PASS",
+      "evidence": "ORD-1003 returned INR 5600.00, Smartwatch, and pending payment."
+    },
+    {
+      "check": "refund_queued",
+      "status": "PASS",
+      "evidence": "ORD-1006 / INR 2200 produced one visible manual-review request."
+    },
+    {
+      "check": "human_approval",
+      "status": "PASS",
+      "evidence": "Approve cleared the queue and delivered a simulated confirmation to chat."
+    },
+    {
+      "check": "new_session_isolation",
+      "status": "PASS",
+      "evidence": "New Session displayed a different ID with empty message history."
+    },
+    {
+      "check": "resume",
+      "status": "PASS",
+      "evidence": "Resume restored the original ORD-1006 conversation and approval outcome."
+    },
+    {
+      "check": "human_denial",
+      "status": "PASS",
+      "evidence": "ORD-1001 / INR 1200 was queued after clarification, denied, removed from the queue, and delivered a refusal in chat."
+    },
+    {
+      "check": "ineligible_refund",
+      "status": "PASS",
+      "evidence": "ORD-1005 / INR 12000 was refused as final sale."
+    },
+    {
+      "check": "redis_cloud_counters",
+      "status": "PASS",
+      "evidence": "Read back this synthetic session and model counters in the customer-support-cloud namespace."
+    },
+    {
+      "check": "rate_limit_block_and_recovery",
+      "status": "PASS",
+      "evidence": "Primed only the synthetic test session counter to limit 10 with 30s TTL; hosted UI displayed try again in 26 seconds, then admitted a request after expiry."
+    },
+    {
+      "check": "general_support",
+      "status": "PASS",
+      "evidence": "After rate-limit expiry, a technical issue produced the deterministic general-support reply."
+    }
+  ],
+  "passed": 14,
+  "failed": 0,
+  "local_regression_tests": {
+    "passed": 33,
+    "dependency_check": "PASS",
+    "run_date": "2026-10-20"
+  },
+  "artifacts": [
+    "hosted_refund_resumed.jpg",
+    "hosted_rate_limit.jpg"
+  ],
+  "limitations": [
+    "Synthetic reference orders; refunds are simulated.",
+    "Session and approval state is process memory and does not survive process restart.",
+    "Approver Queue has no role protection.",
+    "In a conversation spanning orders, the model asked for an additional confirmation of ORD-1001; supplying it completed the request.",
+    "This verifies the POC deployment, not production capacity or model accuracy on arbitrary inputs."
+  ]
+}

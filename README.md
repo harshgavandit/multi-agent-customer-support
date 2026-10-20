@@ -6,6 +6,19 @@ The app gathers details over multiple turns, compacts the conversation into a va
 
 > This is a runnable learning project. Orders are seeded demo data, approvals produce simulated confirmation messages, and no money is transferred.
 
+## Live demo
+
+**[Open the hosted customer-support app](https://harsh-multi-agent-customer-support.streamlit.app/)**
+
+Hosted on Streamlit Community Cloud from this repository's `main` branch.
+Use synthetic orders from the demo table below. Refund approvals are simulated;
+no payments are executed. Sessions and approvals reset when the server restarts
+or sleeps. The Approver Queue is public and has no role protection, so do not
+enter real customer information.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for hosting settings and
+[hosted verification](verification/HOSTED_VERIFICATION.md) for the live checks.
+
 ## What it demonstrates
 
 - **Multi-turn information gathering:** ask for missing order details before routing.
